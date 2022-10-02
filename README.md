@@ -1,14 +1,14 @@
 ![badge](https://img.shields.io/badge/MADE%20WITH-HTML,%20CSS%20&%20JS-blue)
 ![badge](https://img.shields.io/badge/TIME%20TAKEN-3%20to%204%20hrs-red)
-[![badge](https://img.shields.io/badge/SEE%20DEMO%20-VISIT-green)](https://javascript-expensetracker-project5.netlify.app/)
+[![badge](https://img.shields.io/badge/SEE%20DEMO%20-VISIT-green)](https://javascript-musicplayer-project5.netlify.app/)
 
-# JavaScript Expense Tracker App
+# JavaScript Music Player App
 
-- This is Javascript Project. In this project I have made a **Expense Tracker App** with JavasCript, which adds and removes your daily tasks.
+- This is Javascript Project. In this project I have made a **Music Player App** with JavasCript, which adds and removes your daily tasks.
 
 - It took me 3-4 hrs to make this project. Please find the link below.
 
-  [![badge](https://img.shields.io/badge/LINK%20OF-PROJECT-darkgreen)](https://javascript-expensetracker-project5.netlify.app/)
+  [![badge](https://img.shields.io/badge/LINK%20OF-PROJECT-darkgreen)](https://javascript-musicplayer-project5.netlify.app/)
 
 ---
 

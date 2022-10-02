@@ -1,2 +1,3 @@
-//   Expense Tracker:
-// Creates an Expense tracker app  in which users can track expenses incurred by them.
+//  Music Player:
+// Build a music player app which has some features like play,
+// pause, Volume-up, volume-down, Previous,next button.
