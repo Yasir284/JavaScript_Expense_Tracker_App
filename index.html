@@ -15,15 +15,21 @@
       crossorigin="anonymous"
     ></script>
   </head>
+
   <body>
     <div class="bg-image"></div>
 
-    <select class="select" name="selectSong" id="selectSong">
-      <option value="sufiMusic">Sufi</option>
-      <option value="motivationalMusic">Motivational</option>
-      <option value="sadMusic">Sad</option>
-      <option value="desiHipHopMusic">Desi Hip Hop</option>
-      <option value="romanticMusic">Romantic</option>
+    <select
+      class="select"
+      name="selectSong"
+      id="selectSong"
+      onchange="select()"
+    >
+      <option class="options" value="sufiMusic">Sufi</option>
+      <option class="options" value="motivationalMusic">Motivational</option>
+      <option class="options" value="sadMusic">Sad</option>
+      <option class="options" value="desiHipHopMusic">Desi Hip Hop</option>
+      <option class="options" value="romanticMusic">Romantic</option>
     </select>
 
     <div class="container">
@@ -35,20 +41,28 @@
         </button>
         <button class="btn play" onclick="play()">
           <i class="icon fa-solid fa-play"></i>
-          <!-- <i class="icon fa-solid fa-pause"></i> -->
         </button>
+
+        <button class="btn play" onclick="pause()">
+          <i class="icon fa-solid fa-pause"></i>
+        </button>
+
         <button class="btn next" onclick="next()">
           <i class="icon fa-solid fa-forward"></i>
         </button>
-        <button class="btn volume" onclick="volume()">
-          <!-- <i class="icon fa-solid fa-volume"></i> -->
-          <i class="icon fa-solid fa-volume-high"></i>
-        </button>
+        <div class="volumeDiv">
+          <div class="volume-bar">
+            <progress class="volBar" value="1"></progress>
+          </div>
+          <button class="btn volume" onclick="volume()">
+            <i class="icon fa-solid fa-volume-high"></i>
+          </button>
+        </div>
       </div>
 
       <div class="songInfo">
         <div class="progress-bar">
-          <progress class="prog" value="1"></progress>
+          <progress class="prog" max="" value="0"></progress>
         </div>
         <p class="songName">Kun Faya Kun</p>
         <p class="singer">A.R. Rahman, Javed Ali, Mohit Chauhan</p>

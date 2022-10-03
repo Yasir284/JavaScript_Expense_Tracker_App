@@ -1,197 +1,288 @@
 //  Music Player:
 // Build a music player app which has some features like play,
-// pause, Volume-up, volume-down, Previous,next button.
+// pause, V,lume-up, volume-down, Previous,next button.
+let myMusic = {
+  sufiMusic: [
+    {
+      songNumber: 1,
+      image: "images/kun_faya_kun.jpeg",
+      songName: "kun faya kun",
+      singer: "A.R. Rahman, Javed Ali, Mohit Chauhan",
+      src: "audios\\01. Kun Faya Kun.mp3",
+    },
+    {
+      songNumber: 2,
+      image: "images/Khwaja_mere_khwaja.jpeg",
+      songName: "Khwaja Mere Khwaja",
+      singer: "A.R. Rahman",
+      src: "audios\\02.Khwaja Mere Khwaja Jodhaa Akbar 128 Kbps.mp3",
+    },
+    {
+      songNumber: 3,
+      image: "images/Arziyan.jpg",
+      songName: "Arziyan",
+      singer: "Javed Ali, Kailash Kher",
+      src: "audios\\03.Arziyan Delhi 6 128 Kbps.mp3",
+    },
+    {
+      songNumber: 4,
+      image: "images/ali maula.jfif",
+      songName: "Ali Maula",
+      singer: "Salim Merchant, Salim-Sulaiman",
+      src: "audios\\04.Ali Maula Kurbaan 128 Kbps.mp3",
+    },
+    {
+      songNumber: 5,
+      image: "images/bhar do jholi.jfif",
+      songName: "Bhar Do Jholi Meri",
+      singer: "Pritam, Adnan Sami",
+      src: "audios\\05.Bhar Do Jholi Meri Bajrangi Bhaijaan 128 Kbps.mp3",
+    },
+  ],
 
-let sufiMusic = [
-  {
-    songNumber: 1,
-    image: "kun_faya_kun.jpeg",
-    songName: "kun faya kun",
-    singer: "A.R. Rahman, Javed Ali, Mohit Chauhan",
-    src: "audios\01. Kun Faya Kun.mp3",
-  },
-  {
-    songNumber: 2,
-    image: "images/Khwaja_mere_khwaja.jpeg",
-    songName: "Khwaja Mere Khwaja",
-    singer: "A.R. Rahman",
-    src: "audios\02.Khwaja Mere Khwaja Jodhaa Akbar 128 Kbps.mp3",
-  },
-  {
-    songNumber: 3,
-    image: "images/Arziyan.jpg",
-    songName: "Arziyan",
-    singer: "Javed Ali, Kailash Kher",
-    src: "audios\03.Arziyan Delhi 6 128 Kbps.mp3",
-  },
-  {
-    songNumber: 4,
-    image: "images/ali maula.jfif",
-    songName: "Ali Maula",
-    singer: "Salim Merchant, Salim-Sulaiman",
-    src: "audios\04.Ali Maula Kurbaan 128 Kbps.mp3",
-  },
-  {
-    songNumber: 5,
-    image: "images/bhar do jholi.jfif",
-    songName: "Bhar Do Jholi Meri",
-    singer: "Pritam, Adnan Sami",
-    src: "audios\05.Bhar Do Jholi Meri Bajrangi Bhaijaan 128 Kbps.mp3",
-  },
-];
+  motivationalMusic: [
+    {
+      songNumber: 1,
+      image: "images/Kar-Har-Maidaan-Fateh.jpg",
+      songName: "Kar Har Maidaan Fateh",
+      singer: "Shreya Ghoshal, Sukhwinder Singh",
+      src: "audios\\06.Kar Har Maidaan Fateh Sanju 128 Kbps.mp3",
+    },
+    {
+      songNumber: 2,
+      image: "images/Believer.jfif",
+      songName: "Believer",
+      singer: "Jessy",
+      src: "audios\\07.Believer(PagalWorld).mp3",
+    },
+    {
+      songNumber: 3,
+      image: "images/Zinda.jpg",
+      songName: "Zinda",
+      singer: "Shankar-Ehsaan-Loy, Siddharth Mahadevan",
+      src: "audios\\08.Zinda - Bhaag Milkha Bhaag 128 Kbps.mp3",
+    },
+    {
+      songNumber: 4,
+      image: "images/Phir Se Ud Chala - Rockstar.jpg",
+      songName: "Phir Se Ud Chala",
+      singer: "Mohit Chauhan",
+      src: "audios\\09.Phir Se Ud Chala - Rockstar 128 Kbps.mp3",
+    },
+    {
+      songNumber: 5,
+      image: "images/Besabriyaan.jfif",
+      songName: "Besabriyaan",
+      singer: "Armaan Malik",
+      src: "audios\\10.Besabriyaan (M S Dhoni - The Untold Story) 128.mp3",
+    },
+  ],
 
-let motivationalMusic = [
-  {
-    songNumber: 1,
-    image: "images/Kar-Har-Maidaan-Fateh.jpg",
-    songName: "Kar Har Maidaan Fateh",
-    singer: "Shreya Ghoshal, Sukhwinder Singh",
-    src: "audios\06.Kar Har Maidaan Fateh Sanju 128 Kbps.mp3",
-  },
-  {
-    songNumber: 2,
-    image: "images/Believer.jfif",
-    songName: "Believer",
-    singer: "Jessy",
-    src: "audios\07.Khwaja Mere Khwaja Jodhaa Akbar 128 Kbps.mp3",
-  },
-  {
-    songNumber: 3,
-    image: "images/Zinda.jpg",
-    songName: "Zinda",
-    singer: "Shankar-Ehsaan-Loy, Siddharth Mahadevan",
-    src: "audios\08.Zinda - Bhaag Milkha Bhaag 128 Kbps.mp3",
-  },
-  {
-    songNumber: 4,
-    image: "images/Phir Se Ud Chala - Rockstar.jpg",
-    songName: "Phir Se Ud Chala",
-    singer: "Mohit Chauhan",
-    src: "audios\09.Phir Se Ud Chala - Rockstar 128 Kbps.mp3",
-  },
-  {
-    songNumber: 5,
-    image: "images/Besabriyaan.jfif",
-    songName: "Besabriyaan",
-    singer: "Armaan Malik",
-    src: "audios\10.Besabriyaan (M S Dhoni - The Untold Story) 128.mp3",
-  },
-];
+  sadMusic: [
+    {
+      songNumber: 1,
+      image: "images/see you again.jfif",
+      songName: "See You Again (feat. Charlie Puth)",
+      singer: "Wiz Khalifa",
+      src: "audios\\11.See-You-Again(musicdownload.cc) (1).mp3",
+    },
+    {
+      songNumber: 2,
+      image: "images/dusk till dawn.jpg",
+      songName: "Dusk Till Dawn",
+      singer: "ZAYN",
+      src: "audios\\12.Dusk Till Dawn(Mr-Jatt1.com).mp3",
+    },
+    {
+      songNumber: 3,
+      image: "images/Abhi mujh me kahi.jfif",
+      songName: "Abhi Mujh Mein Kahin",
+      singer: "Ajay-Atul, Sonu Nigam",
+      src: "audios\\13.Abhi Mujh Mein Kahin Agneepath 128 Kbps.mp3",
+    },
+    {
+      songNumber: 4,
+      image: "images/Tujhe bhula diya.jfif",
+      songName: "Tujhe Bhula Diya",
+      singer: "Mohit Chauhan, Shekhar Ravjiani, Shruti Pathak",
+      src: "audios\\14.Tujhe Bhula Diya Phir Anjaana Anjaani 128 Kbps.mp3",
+    },
+    {
+      songNumber: 5,
+      image: "images/Agar-Tum-Saath-Ho.jpg",
+      songName: "Agar Tum Saath Ho",
+      singer: "Alka Yagnik, Arijit Singh",
+      src: "audios\\15.Agar Tum Saath Ho Tamasha 320 Kbps.mp3",
+    },
+  ],
 
-let sadMusic = [
-  {
-    songNumber: 1,
-    image: "images/see you again.jfif",
-    songName: "See You Again (feat. Charlie Puth)",
-    singer: "Wiz Khalifa",
-    src: "audios\12.See-You-Again(musicdownload.cc) (1).mp3",
-  },
-  {
-    songNumber: 2,
-    image: "images/dusk till dawn.jpg",
-    songName: "Dusk Till Dawn",
-    singer: "ZAYN",
-    src: "audios\13.Dusk Till Dawn(Mr-Jatt1.com).mp3",
-  },
-  {
-    songNumber: 3,
-    image: "imagesAbhi mujh me kahi.jfif",
-    songName: "Abhi Mujh Mein Kahin",
-    singer: "Ajay-Atul, Sonu Nigam",
-    src: "audios\14.Abhi Mujh Mein Kahin Agneepath 128 Kbps.mp3",
-  },
-  {
-    songNumber: 4,
-    image: "imagesTujhe bhula diya.jfif",
-    songName: "Tujhe Bhula Diya",
-    singer: "Mohit Chauhan, Shekhar Ravjiani, Shruti Pathak",
-    src: "audios\15.Tujhe Bhula Diya Phir Anjaana Anjaani 128 Kbps.mp3",
-  },
-  {
-    songNumber: 5,
-    image: "imagesAgar-Tum-Saath-Ho.jpg",
-    songName: "Agar Tum Saath Ho",
-    singer: "Alka Yagnik, Arijit Singh",
-    src: "audios\15.Agar Tum Saath Ho Tamasha 320 Kbps.mp3",
-  },
-];
+  desiHipHopMusic: [
+    {
+      songNumber: 1,
+      image: "images/kehndi-hundi-si.jpg",
+      songName: "Kehndi Hundi Si Chan Tak Raah Bana De",
+      singer: "Ap Dhillon, Gurinder Gill",
+      src: "audios\\16.Kehndi Hundi Si.mp3",
+    },
+    {
+      songNumber: 2,
+      image: "images/The-Last-Ride.jpg",
+      songName: "THE LAST RIDE",
+      singer: "Sidhu Moose Wala",
+      src: "audios\\17.The Last Ride.mp3",
+    },
+    {
+      songNumber: 3,
+      image: "images/Jatt-Da-Muqabla.jpg",
+      songName: "Jatt Da Muqabala",
+      singer: "Sidhu Moosewala",
+      src: "audios\\18.Jatt Da Muqabla.mp3",
+    },
+    {
+      songNumber: 4,
+      image: "images/Mere Gully Mein.jfif",
+      songName: "Mere Gully Mein",
+      singer: "Divine",
+      src: "audios\\19.Mere Gully Mein (Mere Gully Mein) - (Raag.Fm).mp3",
+    },
+    {
+      songNumber: 5,
+      image: "images\\firse-machayenge.jpg",
+      songName: "Firse Machayenge",
+      singer: "Emiway Bantai, Tony James",
+      src: "audios\\20.Firse Machayenge - Emiway Bantai.mp3",
+    },
+  ],
 
-let desiHipHopMusic = [
-  {
-    songNumber: 1,
-    image: "images/kehndi-hundi-si.jpg",
-    songName: "Kehndi Hundi Si Chan Tak Raah Bana De",
-    singer: "Ap Dhillon, Gurinder Gill",
-    src: "audios\16.Kehndi Hundi Si.mp3",
-  },
-  {
-    songNumber: 2,
-    image: "images/The-Last-Ride.jpg",
-    songName: "THE LAST RIDE",
-    singer: "Sidhu Moose Wala",
-    src: "audios\17.The Last Ride.mp3",
-  },
-  {
-    songNumber: 3,
-    image: "images/Jatt-Da-Muqabla.jpg",
-    songName: "Jatt Da Muqabala",
-    singer: "Sidhu Moosewala",
-    src: "audios\18.Jatt Da Muqabla.mp3",
-  },
-  {
-    songNumber: 4,
-    image: "images/Mere Gully Mein.jfif",
-    songName: "Mere Gully Mein",
-    singer: "Divine",
-    src: "audios\19.Mere Gully Mein (Mere Gully Mein) - (Raag.Fm).mp3",
-  },
-  {
-    songNumber: 5,
-    image: "images\firse-machayenge.jpg",
-    songName: "Firse Machayenge",
-    singer: "Emiway Bantai, Tony James",
-    src: "audios\20.Firse Machayenge - Emiway Bantai.mp3",
-  },
-];
+  romanticMusic: [
+    {
+      songNumber: 1,
+      image: "images/Tarron ke shehar mein.jfif",
+      songName: "Tarron ke shehar mein",
+      singer: "Neha Kakkar, Jubin Nautiyal, Jaani",
+      src: "audios\\21.Taaron Ke Shehar - Neha Kakkar.mp3",
+    },
+    {
+      songNumber: 2,
+      image: "images/Kesariya.jfif",
+      songName: "Kesariya",
+      singer: "Ap Dhillon, Gurinder Gill",
+      src: "audios\\22.Kesariya - Brahmastra.mp3",
+    },
+    {
+      songNumber: 3,
+      image: "images/shayad.jpg",
+      songName: "Shayad",
+      singer: "Arijit Singh, Pritam",
+      src: "audios\\23.Shayad - Love Aaj Kal.mp3",
+    },
+    {
+      songNumber: 4,
+      image: "images/pal.jpg",
+      songName: "Pal",
+      singer: "Arijit Singh & Shreya Ghoshal",
+      src: "audios\\24.Pal - Jalebi - Arijit Singh.mp3",
+    },
+    {
+      songNumber: 5,
+      image: "images\\raataan-lambiyan.jpg",
+      songName: "Raataan Lambiyan",
+      singer: "Jubin Nautiyal, Asees Kaur, Tanishk Bagchi",
+      src: "audios\\25.Raataan Lambiyan - Shershaah.mp3",
+    },
+  ],
+};
 
-let romanticMusic = [
-  {
-    songNumber: 1,
-    image: "images/Tarron ke shehar mein.jfif",
-    songName: "Tarron ke shehar mein",
-    singer: "Neha Kakkar, Jubin Nautiyal, Jaani",
-    src: "audios\21.Taaron Ke Shehar - Neha Kakkar.mp3",
-  },
-  {
-    songNumber: 2,
-    image: "images/Kesariya.jfif",
-    songName: "Kesariya",
-    singer: "Ap Dhillon, Gurinder Gill",
-    src: "audios\22.Kesariya - Brahmastra.mp3",
-  },
-  {
-    songNumber: 3,
-    image: "images/shayad.jpg",
-    songName: "Shayad",
-    singer: "Arijit Singh, Pritam",
-    src: "audios\23.Shayad - Love Aaj Kal.mp3",
-  },
-  {
-    songNumber: 4,
-    image: "images/pal.jpg",
-    songName: "Pal",
-    singer: "Arijit Singh & Shreya Ghoshal",
-    src: "audios\24.Pal - Jalebi - Arijit Singh.mp3",
-  },
-  {
-    songNumber: 1,
-    image: "images/kehndi-hundi-si.jpg",
-    songName: "Kehndi Hundi Si Chan Tak Raah Bana De",
-    singer: "Ap Dhillon, Gurinder Gill",
-    src: "audios\16.Kehndi Hundi Si.mp3",
-  },
-];
+let catagory;
+let audio;
+let duration;
+let songNumber = 0;
 
-let audio = new Audio();
+let image = document.querySelector(".image");
+let songName = document.querySelector(".songName");
+let singer = document.querySelector(".singer");
+let progressBar = document.querySelector(".progress-bar");
 
-function play() {}
+// Get Audio and elements
+function getAudio() {
+  catagory = document.querySelector("select").value;
+  audio = new Audio(myMusic[catagory][songNumber].src);
+  image.src = myMusic[catagory][songNumber].image;
+  songName.textContent = myMusic[catagory][songNumber].songName;
+  singer.textContent = myMusic[catagory][songNumber].singer;
+  console.log("in play");
+}
+
+// Select Somg Catagory
+function select() {
+  songNumber = 0;
+  play();
+  audio.pause();
+  getAudio();
+  play();
+}
+
+// Play Song
+function play() {
+  if (!audio) {
+    getAudio();
+  }
+  audio.play();
+
+  setTimeout(() => {
+    getProgress();
+  }, 1000);
+
+  progressBar.addEventListener("click", (e) => {
+    audio.currentTime = (e.offsetX / progressBar.offsetWidth) * audio.duration;
+    document.querySelector(".prog").value = audio.currentTime;
+    console.log((e.offsetX / progressBar.offsetWidth) * audio.duration);
+  });
+}
+
+// Pause Song
+function pause() {
+  audio.pause();
+}
+
+// Previous Song
+function prev() {
+  play();
+  audio.pause();
+  if (songNumber <= 0) {
+    songNumber = myMusic[catagory].length;
+  }
+  songNumber--;
+
+  getAudio();
+  play();
+}
+
+// Next Song
+function next() {
+  play();
+  audio.pause();
+  if (songNumber >= myMusic[catagory].length - 1) {
+    songNumber = -1;
+  }
+  songNumber++;
+  getAudio();
+  play();
+}
+
+function getProgress() {
+  duration = audio.duration;
+  let interval = setInterval(() => {
+    document.querySelector(".prog").max = duration;
+    document.querySelector(".prog").value = audio.currentTime;
+    console.log(audio.duration);
+    console.log(audio.currentTime);
+  }, 1000);
+
+  setTimeout(() => {
+    clearInterval(interval);
+  }, duration * 1000 - 1000);
+}
+
+// music = 400
+// wid = 200
