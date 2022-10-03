@@ -116,6 +116,82 @@ let sadMusic = [
   },
 ];
 
+let desiHipHopMusic = [
+  {
+    songNumber: 1,
+    image: "images/kehndi-hundi-si.jpg",
+    songName: "Kehndi Hundi Si Chan Tak Raah Bana De",
+    singer: "Ap Dhillon, Gurinder Gill",
+    src: "audios\16.Kehndi Hundi Si.mp3",
+  },
+  {
+    songNumber: 2,
+    image: "images/The-Last-Ride.jpg",
+    songName: "THE LAST RIDE",
+    singer: "Sidhu Moose Wala",
+    src: "audios\17.The Last Ride.mp3",
+  },
+  {
+    songNumber: 3,
+    image: "images/Jatt-Da-Muqabla.jpg",
+    songName: "Jatt Da Muqabala",
+    singer: "Sidhu Moosewala",
+    src: "audios\18.Jatt Da Muqabla.mp3",
+  },
+  {
+    songNumber: 4,
+    image: "images/Mere Gully Mein.jfif",
+    songName: "Mere Gully Mein",
+    singer: "Divine",
+    src: "audios\19.Mere Gully Mein (Mere Gully Mein) - (Raag.Fm).mp3",
+  },
+  {
+    songNumber: 5,
+    image: "images\firse-machayenge.jpg",
+    songName: "Firse Machayenge",
+    singer: "Emiway Bantai, Tony James",
+    src: "audios\20.Firse Machayenge - Emiway Bantai.mp3",
+  },
+];
+
+let romanticMusic = [
+  {
+    songNumber: 1,
+    image: "images/Tarron ke shehar mein.jfif",
+    songName: "Tarron ke shehar mein",
+    singer: "Neha Kakkar, Jubin Nautiyal, Jaani",
+    src: "audios\21.Taaron Ke Shehar - Neha Kakkar.mp3",
+  },
+  {
+    songNumber: 2,
+    image: "images/Kesariya.jfif",
+    songName: "Kesariya",
+    singer: "Ap Dhillon, Gurinder Gill",
+    src: "audios\22.Kesariya - Brahmastra.mp3",
+  },
+  {
+    songNumber: 3,
+    image: "images/shayad.jpg",
+    songName: "Shayad",
+    singer: "Arijit Singh, Pritam",
+    src: "audios\23.Shayad - Love Aaj Kal.mp3",
+  },
+  {
+    songNumber: 4,
+    image: "images/pal.jpg",
+    songName: "Pal",
+    singer: "Arijit Singh & Shreya Ghoshal",
+    src: "audios\24.Pal - Jalebi - Arijit Singh.mp3",
+  },
+  {
+    songNumber: 1,
+    image: "images/kehndi-hundi-si.jpg",
+    songName: "Kehndi Hundi Si Chan Tak Raah Bana De",
+    singer: "Ap Dhillon, Gurinder Gill",
+    src: "audios\16.Kehndi Hundi Si.mp3",
+  },
+];
+
 let audio = new Audio();
 
 function play() {}
