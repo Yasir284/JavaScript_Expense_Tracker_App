@@ -195,7 +195,3 @@ progress::-webkit-progress-value {
     opacity: 100%;
   }
 }
-
-.volume {
-  transition: all ease-in-out 0.5s;
-}
