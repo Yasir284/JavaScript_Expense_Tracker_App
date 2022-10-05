@@ -33,24 +33,29 @@
     <div class="container">
       <img class="image" src="images\kehndi-hundi-si.jpg" alt="img" />
 
+      <div class="time">
+        <p class="currTime">0.00</p>
+        <p class="totalTime">0.00</p>
+      </div>
+
       <div class="progress-bar">
         <progress class="prog" max="" value="0"></progress>
       </div>
 
       <div class="controls">
-        <button class="btn prev" onclick="prev()">
+        <button class="btn prev" onclick="prev()" title="Previous">
           <i class="icon fa-solid fa-backward"></i>
         </button>
 
-        <button class="btn play" onclick="play()">
-          <i class="icon fa-solid fa-pause"></i>
+        <button class="btn play" onclick="play()" title="Play">
+          <i class="icon fa-solid fa-play"></i>
         </button>
 
         <!-- <button class="btn play" onclick="pause()"> -->
         <!-- <i class="icon fa-solid fa-pause"></i> -->
         <!-- </button> -->
 
-        <button class="btn next" onclick="next()">
+        <button class="btn next" onclick="next()" title="Next">
           <i class="icon fa-solid fa-forward"></i>
         </button>
 

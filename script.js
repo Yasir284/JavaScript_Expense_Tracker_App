@@ -197,6 +197,10 @@ let catagory;
 let audio;
 let duration;
 let songNumber = 0;
+let currTime;
+let currMin;
+let currSec;
+let cs;
 
 let image = document.querySelector(".image");
 let songName = document.querySelector(".songName");
@@ -240,14 +244,16 @@ function play() {
     !playIcon.classList.contains("fa-pause")
   );
 
-  if (playIcon.classList.contains("fa-play")) {
+  if (playIcon.classList.contains("fa-pause")) {
     if (!audio) {
       getAudio();
     }
     audio.play();
+    document.querySelector(".play").title = "Pause";
 
     setTimeout(() => {
       getProgress();
+      getTime();
     }, 1000);
 
     progressBar.addEventListener("click", (e) => {
@@ -258,6 +264,7 @@ function play() {
     });
   } else {
     audio.pause();
+    document.querySelector(".play").title = "Play";
   }
 
   console.log("audio working");
@@ -306,6 +313,30 @@ function getProgress() {
     document.querySelector(".prog").value = audio.currentTime;
     console.log(audio.duration);
     console.log(audio.currentTime);
+  }, 1000);
+
+  setTimeout(() => {
+    clearInterval(interval);
+  }, duration * 1000 - 1000);
+}
+
+function getTime() {
+  duration = Math.floor(audio.duration);
+  let min = duration / 60;
+  let sec = duration - Math.floor(min) * 60;
+  let s = sec < 10 ? "0" + sec : sec;
+  console.log(`Time Duration ${Math.floor(min)}:${s}`);
+
+  document.querySelector(".totalTime").textContent = `${Math.floor(min)}:${s}`;
+  let interval = setInterval(() => {
+    currTime = Math.floor(audio.currentTime);
+    currMin = currTime / 60;
+    currSec = currTime - Math.floor(currMin) * 60;
+    cs = currSec < 10 ? "0" + currSec : currSec;
+    document.querySelector(".currTime").textContent = `${Math.floor(
+      currMin
+    )}:${cs}`;
+    console.log(`Current Time ${Math.floor(currMin)}:${cs}`);
   }, 1000);
 
   setTimeout(() => {

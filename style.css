@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #111111;
+  background: linear-gradient(#ffabe1, #937dc2);
   height: 100vh;
   position: relative;
   overflow: hidden;
@@ -28,7 +28,7 @@ select {
   border: none;
   color: #fff;
   border-radius: 5px;
-  background-color: #1e1e1e;
+  background-color: rgba(30, 30, 30, 0.5);
   background-image: url(images/white-down-arrow-png-2.png);
   background-position: 90% center;
   background-repeat: no-repeat;
@@ -62,16 +62,15 @@ select:hover {
   box-sizing: border-box;
   color: #fff;
   border-radius: 5px;
-  background-color: #1e1e1e;
-  padding: 3rem;
+  background-color: rgba(30, 30, 30, 0.75);
+  padding: 3rem 3.5rem;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
-  box-shadow: inset -6px -6px 6px rgba(0, 0, 0, 0.5),
-    inset 6px 6px 6px rgba(0, 0, 0, 0.5);
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.5);
   transition: all 0.2s ease-in-out;
 }
 
@@ -194,4 +193,12 @@ progress::-webkit-progress-value {
   100% {
     opacity: 100%;
   }
+}
+
+.time {
+  width: 15rem;
+  margin-bottom: -1.5rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
 }
