@@ -202,6 +202,10 @@ let image = document.querySelector(".image");
 let songName = document.querySelector(".songName");
 let singer = document.querySelector(".singer");
 let progressBar = document.querySelector(".progress-bar");
+let volume = document.querySelector(".volume");
+let volIcon = volume.querySelector("i");
+let playIcon = document.querySelector(".play i");
+let volumeBar = document.querySelector(".volume-bar");
 
 // Get Audio and elements
 function getAudio() {
@@ -220,30 +224,45 @@ function select() {
   audio.pause();
   getAudio();
   play();
+  if (volIcon.classList.contains("fa-volume-xmark")) {
+    volumeBar.value = audio.volume = 0;
+  } else {
+    volumeBar.value = audio.volume = 1;
+  }
 }
 
 // Play Song
 function play() {
-  if (!audio) {
-    getAudio();
+  playIcon.classList.toggle("fa-play", !playIcon.classList.contains("fa-play"));
+
+  playIcon.classList.toggle(
+    "fa-pause",
+    !playIcon.classList.contains("fa-pause")
+  );
+
+  if (playIcon.classList.contains("fa-play")) {
+    if (!audio) {
+      getAudio();
+    }
+    audio.play();
+
+    setTimeout(() => {
+      getProgress();
+    }, 1000);
+
+    progressBar.addEventListener("click", (e) => {
+      audio.currentTime =
+        (e.offsetX / progressBar.offsetWidth) * audio.duration;
+      document.querySelector(".prog").value = audio.currentTime;
+      console.log((e.offsetX / progressBar.offsetWidth) * audio.duration);
+    });
+  } else {
+    audio.pause();
   }
-  audio.play();
 
-  setTimeout(() => {
-    getProgress();
-  }, 1000);
-
-  progressBar.addEventListener("click", (e) => {
-    audio.currentTime = (e.offsetX / progressBar.offsetWidth) * audio.duration;
-    document.querySelector(".prog").value = audio.currentTime;
-    console.log((e.offsetX / progressBar.offsetWidth) * audio.duration);
-  });
+  console.log("audio working");
 }
-
-// Pause Song
-function pause() {
-  audio.pause();
-}
+volume.addEventListener("click", vol);
 
 // Previous Song
 function prev() {
@@ -256,6 +275,11 @@ function prev() {
 
   getAudio();
   play();
+  if (volIcon.classList.contains("fa-volume-xmark")) {
+    volumeBar.value = audio.volume = 0;
+  } else {
+    volumeBar.value = audio.volume = 1;
+  }
 }
 
 // Next Song
@@ -268,6 +292,11 @@ function next() {
   songNumber++;
   getAudio();
   play();
+  if (volIcon.classList.contains("fa-volume-xmark")) {
+    volumeBar.value = audio.volume = 0;
+  } else {
+    volumeBar.value = audio.volume = 1;
+  }
 }
 
 function getProgress() {
@@ -284,5 +313,30 @@ function getProgress() {
   }, duration * 1000 - 1000);
 }
 
-// music = 400
-// wid = 200
+// volume mute & unmute
+function vol() {
+  volIcon.classList.toggle(
+    "fa-volume-xmark",
+    !volIcon.classList.contains("fa-volume-xmark")
+  );
+  volume
+    .querySelector("i")
+    .classList.toggle(
+      "fa-volume-high",
+      !volIcon.classList.contains("fa-volume-high")
+    );
+
+  if (volIcon.classList.contains("fa-volume-xmark")) {
+    audio.volume = 0;
+    volumeBar.value = 0;
+  } else {
+    audio.volume = 1;
+    volumeBar.value = 1;
+  }
+
+  console.log("volume working");
+}
+
+volumeBar.addEventListener("click", (e) => {
+  audio.volume = volumeBar.value = e.offsetX / volumeBar.offsetWidth;
+});

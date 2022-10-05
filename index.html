@@ -17,59 +17,58 @@
   </head>
 
   <body>
-    <div class="bg-image"></div>
-
     <select
       class="select"
       name="selectSong"
       id="selectSong"
       onchange="select()"
     >
+      <option class="options" value="desiHipHopMusic">Desi Hip Hop</option>
       <option class="options" value="sufiMusic">Sufi</option>
       <option class="options" value="motivationalMusic">Motivational</option>
-      <option class="options" value="sadMusic">Sad</option>
-      <option class="options" value="desiHipHopMusic">Desi Hip Hop</option>
       <option class="options" value="romanticMusic">Romantic</option>
+      <option class="options" value="sadMusic">Sad</option>
     </select>
 
     <div class="container">
-      <img class="image" src="./images/kun_faya_kun.jpeg" alt="img" />
+      <img class="image" src="images\kehndi-hundi-si.jpg" alt="img" />
+
+      <div class="progress-bar">
+        <progress class="prog" max="" value="0"></progress>
+      </div>
 
       <div class="controls">
         <button class="btn prev" onclick="prev()">
           <i class="icon fa-solid fa-backward"></i>
         </button>
-        <button class="btn play" onclick="play()">
-          <i class="icon fa-solid fa-play"></i>
-        </button>
 
-        <button class="btn play" onclick="pause()">
+        <button class="btn play" onclick="play()">
           <i class="icon fa-solid fa-pause"></i>
         </button>
+
+        <!-- <button class="btn play" onclick="pause()"> -->
+        <!-- <i class="icon fa-solid fa-pause"></i> -->
+        <!-- </button> -->
 
         <button class="btn next" onclick="next()">
           <i class="icon fa-solid fa-forward"></i>
         </button>
+
         <div class="volumeDiv">
-          <div class="volume-bar">
-            <progress class="volBar" value="1"></progress>
-          </div>
-          <button class="btn volume" onclick="volume()">
+          <progress class="volume-bar" max="1" value="1"></progress>
+          <button class="btn volume">
             <i class="icon fa-solid fa-volume-high"></i>
+            <!-- <i class="icon fa-solid fa-volume-xmark"></i> -->
           </button>
         </div>
       </div>
 
       <div class="songInfo">
-        <div class="progress-bar">
-          <progress class="prog" max="" value="0"></progress>
-        </div>
-        <p class="songName">Kun Faya Kun</p>
-        <p class="singer">A.R. Rahman, Javed Ali, Mohit Chauhan</p>
+        <p class="songName">Kehndi Hundi Si Chan Tak Raah Bana De</p>
+        <p class="singer">Ap Dhillon, Gurinder Gill</p>
       </div>
     </div>
 
-    <!-- <audio src="audios\04.Ali Maula Kurbaan 128 Kbps.mp3" controls></audio> -->
     <!-- JS -->
     <script src="script.js"></script>
   </body>
