@@ -239,6 +239,9 @@ function select() {
 function play() {
   playIcon.classList.toggle("fa-play", !playIcon.classList.contains("fa-play"));
 
+  volume.disabled = false;
+  document.querySelector(".volumeDiv").classList.remove("disabled");
+
   playIcon.classList.toggle(
     "fa-pause",
     !playIcon.classList.contains("fa-pause")
@@ -248,6 +251,13 @@ function play() {
     if (!audio) {
       getAudio();
     }
+
+    // if (volIcon.classList.contains("fa-volume-xmark")) {
+    //   volumeBar.value = audio.volume = 0;
+    // } else {
+    //   volumeBar.value = audio.volume = 1;
+    // }
+
     audio.play();
     document.querySelector(".play").title = "Pause";
 
@@ -357,7 +367,7 @@ function vol() {
       !volIcon.classList.contains("fa-volume-high")
     );
 
-  if (volIcon.classList.contains("fa-volume-xmark")) {
+  if (audio.volume > 0) {
     audio.volume = 0;
     volumeBar.value = 0;
   } else {

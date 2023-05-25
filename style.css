@@ -186,6 +186,24 @@ progress::-webkit-progress-value {
   animation: volume-bar 0.5s normal;
 }
 
+.disabled {
+  /* background-color: ; */
+  pointer-events: none;
+}
+
+.disabled .volume {
+  box-shadow: none;
+}
+
+.disabled:hover .volume-bar {
+  display: none;
+  animation: none;
+}
+
+.disabled i {
+  color: rgba(90, 88, 88, 0.826);
+}
+
 @keyframes volume-bar {
   0% {
     opacity: 0%;
